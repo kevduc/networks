@@ -88,8 +88,12 @@ body {
     background-size: 100% 100%, auto;
 }
 
-#bin:hover, #bin.open {
-    background-image: url('images/icons/bin-open.svg');
+#bin:hover.empty, #bin.open.empty {
+    background-image: url('images/icons/bin-open-empty.svg');
+}
+
+#bin:hover.not-empty, #bin.open.not-empty {
+    background-image: url('images/icons/bin-open-not-empty.svg');
 }
 
 #gallery-collapse-button {

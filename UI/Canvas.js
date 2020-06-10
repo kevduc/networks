@@ -5,6 +5,7 @@ export default class Canvas {
     constructor(htmlElement) {
         this.htmlElement = htmlElement;
         this.currentZindex = 1;
+        this.selection = null;
 
         this.htmlElement.addEventListener('dragover', ev => ev.preventDefault());
         this.htmlElement.addEventListener('drop', ev => {
@@ -53,5 +54,27 @@ export default class Canvas {
                     break;
             }
         }, { useCapture: true });
+
+        this.htmlElement.addEventListener('mousedown', ev => {
+            if (ev.target !== this.htmlElement) return;
+            this.selection = { x1: ev.offsetX, y1: ev.offsetY };
+            console.debug('selection start');
+        });
+
+        this.htmlElement.addEventListener('mousemove', ev => {
+            if (this.selection === null) return;
+            let mousePosition = { x: ev.offsetX, y: ev.offsetY };
+            console.debug(mousePosition);
+        });
+
+        this.htmlElement.addEventListener('mouseup', ev => {
+            if (this.selection === null) return;
+            this.selection.x2 = Math.max(ev.offsetX, this.selection.x1);
+            this.selection.y2 = Math.max(ev.offsetY, this.selection.y1);
+            this.selection.x1 = Math.min(ev.offsetX, this.selection.x1);
+            this.selection.y1 = Math.min(ev.offsetY, this.selection.y1);
+            console.debug(this.selection);
+            this.selection = null;
+        });
     }
 }

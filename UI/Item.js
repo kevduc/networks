@@ -56,9 +56,9 @@ export default class Item {
 
         document.addEventListener('keyup', ev => {
             if (ev.key == "Delete" && this.selected) {
-                let throwEvent = new Event('throw');
-                throwEvent.item = this.htmlElement;
-                document.querySelector('#bin').dispatchEvent(throwEvent);
+                let binEvent = new Event('bin');
+                binEvent.item = this.htmlElement;
+                document.querySelector('#bin').dispatchEvent(binEvent);
             }
         });
 

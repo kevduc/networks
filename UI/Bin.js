@@ -16,7 +16,7 @@ export default class Bin {
             switch (data.action) {
                 case "move":
                     let item = document.querySelector(`#${data.itemId}`);
-                    this.throw(item);
+                    this.bin(item);
                     break;
                 default:
                     break;
@@ -25,13 +25,14 @@ export default class Bin {
             this.htmlElement.classList.remove('open')
         }, { useCapture: true });
 
-        this.htmlElement.addEventListener('throw', ev => {
-            this.throw(ev.item);
+        this.htmlElement.addEventListener('bin', ev => {
+            this.bin(ev.item);
         });
 
         this.htmlElement.addEventListener('dblclick', ev => {
             if (this.content.length == 0) return;
             let item = this.content.pop();
+            if (this.content.length == 0) this.htmlElement.classList.replace('not-empty', 'empty');
 
             let canvas = document.querySelector('#canvas');
             let rect = canvas.getBoundingClientRect();
@@ -50,7 +51,8 @@ export default class Bin {
         })
     }
 
-    throw(item) {
+    bin(item) {
+        if (this.content.length == 0) this.htmlElement.classList.replace('empty', 'not-empty');
         this.content.push(item);
         item.dispatchEvent(new Event('remove'));
         item.style.display = "none";
