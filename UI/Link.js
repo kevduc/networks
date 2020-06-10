@@ -4,6 +4,7 @@ export default class Link {
     constructor(canvas) {
         let div = document.createElement('div');
         div.classList.add('link');
+        div.classList.add('ethernet-link');
 
         this.htmlElement = div;
         this.htmlElement.classList.add('disable-selection');
@@ -43,6 +44,7 @@ export default class Link {
 
     connect(item1, item2) {
         this.htmlElement.style.display = '';
+        // this.htmlElement.classList.replace('ethernet-link','wifi-link'); // TODO: WiFi link for WiFi devices
         this.linkedItems = [item1, item2];
 
         item1.addEventListener('dragend', this.refreshLink.bind(this));

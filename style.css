@@ -115,14 +115,25 @@ body {
   box-sizing: inherit;
   position: absolute;
   z-index: -1;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' vector-effect='non-scaling-stroke'/></svg>");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%, auto;
 }
 
-.link.selected {
+.ethernet-link {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' vector-effect='non-scaling-stroke'/></svg>");
+}
+
+.wifi-link {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' stroke-dasharray='5' vector-effect='non-scaling-stroke'/></svg>");
+}
+
+.ethernet-link.selected {
     background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='lightskyblue' stroke-width='3' vector-effect='non-scaling-stroke'/></svg>");
+}
+
+.wifi-link.selected {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='lightskyblue' stroke-dasharray='5' vector-effect='non-scaling-stroke'/></svg>");
 }
 
 .disable-selection {
