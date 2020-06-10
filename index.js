@@ -2,6 +2,7 @@ import Router from "./Devices/Router.js"
 import Computer from "./Devices/Computer.js";
 import Canvas from "./UI/Canvas.js";
 import Icon from "./UI/Icon.js";
+import Bin from "./UI/Bin.js";
 
 let router = new Router();
 let computer = new Computer();
@@ -11,4 +12,5 @@ let computer = new Computer();
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = new Canvas(document.querySelector('#canvas'));
     let icons = Array.from(document.querySelectorAll('.icon')).map(el => new Icon(el));
+    let bin = new Bin(document.querySelector('#bin'));
 })
