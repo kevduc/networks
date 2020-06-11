@@ -5,22 +5,14 @@ export default class Canvas {
     constructor(htmlElement) {
         this.htmlElement = htmlElement;
         this.currentZindex = 1;
-        this.selection = null;
+        this.selection = document.querySelector('#selection');
 
         this.htmlElement.addEventListener('dragover', ev => ev.preventDefault());
         this.htmlElement.addEventListener('drop', ev => {
             let mousePosition = { x: ev.offsetX, y: ev.offsetY };
 
             if (ev.target !== this.htmlElement) {
-                // if (!ev.target.classList.contains('item')) return;
-                let rect = ev.target.getBoundingClientRect();
-                let tfs = extractTransforms(ev.target);
-
-                let offset = {x: ev.offsetX, y: ev.offsetY};
-                if ("scaleX" in tfs) offset.x = rect.width - offset.x; // TODO: use tf.value
-                if ("scaleY" in tfs) offset.y = rect.height - offset.y;
-
-                mousePosition = { x: offset.x + rect.x, y: offset.y + rect.y };
+                mousePosition = Canvas.toCanvasPosition(ev);
             }
 
             ev.preventDefault();
@@ -57,24 +49,44 @@ export default class Canvas {
 
         this.htmlElement.addEventListener('mousedown', ev => {
             if (ev.target !== this.htmlElement) return;
-            this.selection = { x1: ev.offsetX, y1: ev.offsetY };
-            console.debug('selection start');
+            let selectionStartEvent = new Event('selectionstart');
+            selectionStartEvent.mousePosition = { x: ev.offsetX, y: ev.offsetY };
+            this.selection.dispatchEvent(selectionStartEvent);
         });
 
         this.htmlElement.addEventListener('mousemove', ev => {
-            if (this.selection === null) return;
             let mousePosition = { x: ev.offsetX, y: ev.offsetY };
-            console.debug(mousePosition);
+
+            if (ev.target !== this.htmlElement) {
+                mousePosition = Canvas.toCanvasPosition(ev);
+            }
+
+            let selectionMoveEvent = new Event('selectionmove');
+            selectionMoveEvent.mousePosition = mousePosition;
+            this.selection.dispatchEvent(selectionMoveEvent);
         });
 
         this.htmlElement.addEventListener('mouseup', ev => {
-            if (this.selection === null) return;
-            this.selection.x2 = Math.max(ev.offsetX, this.selection.x1);
-            this.selection.y2 = Math.max(ev.offsetY, this.selection.y1);
-            this.selection.x1 = Math.min(ev.offsetX, this.selection.x1);
-            this.selection.y1 = Math.min(ev.offsetY, this.selection.y1);
-            console.debug(this.selection);
-            this.selection = null;
+            let mousePosition = { x: ev.offsetX, y: ev.offsetY };
+
+            if (ev.target !== this.htmlElement) {
+                mousePosition = Canvas.toCanvasPosition(ev);
+            }
+
+            let selectionStopEvent = new Event('selectionstop');
+            selectionStopEvent.mousePosition = mousePosition;
+            this.selection.dispatchEvent(selectionStopEvent);
         });
+    }
+
+    static toCanvasPosition(ev) {
+        let rect = ev.target.getBoundingClientRect();
+        let tfs = extractTransforms(ev.target);
+
+        let offset = {x: ev.offsetX, y: ev.offsetY};
+        if ("scaleX" in tfs) offset.x = rect.width - offset.x; // TODO: use tf.value
+        if ("scaleY" in tfs) offset.y = rect.height - offset.y;
+
+        return { x: offset.x + rect.x, y: offset.y + rect.y };
     }
 }

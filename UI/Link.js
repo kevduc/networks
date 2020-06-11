@@ -33,6 +33,8 @@ export default class Link {
                 this.select();
         })
 
+        this.htmlElement.addEventListener('select', ev => this.select());
+
         document.addEventListener('mousedown', ev => this.deselect(), { useCapture: true });
 
         document.addEventListener('keyup', ev => {

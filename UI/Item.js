@@ -50,9 +50,10 @@ export default class Item {
             }
         });
 
-        this.htmlElement.addEventListener('click', ev => {
-            this.select();
-        });
+        this.htmlElement.addEventListener('click', ev => this.select());
+
+        this.htmlElement.addEventListener('select', ev => this.select());
+
 
         document.addEventListener('keyup', ev => {
             if (ev.key == "Delete" && this.selected) {

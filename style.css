@@ -173,3 +173,11 @@ body {
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
   user-select: none;
 }
+
+.selection {
+  position: absolute;
+  z-index: 999998;
+  background-color: lightskyblue;
+  opacity: .2;
+  border: 1px solid rgb(45, 122, 170);
+}
