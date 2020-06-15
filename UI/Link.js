@@ -14,7 +14,7 @@ export default class Link {
         this.linkedItems = [];
         this.selected = false;
 
-        this.htmlElement.addEventListener('click', ev => {
+        this.htmlElement.addEventListener('click', ev => { // TODO: fix overlapping link divs
             let offset = { x: ev.offsetX, y: ev.offsetY };
             let rect = this.htmlElement.getBoundingClientRect();
 
@@ -29,7 +29,7 @@ export default class Link {
 
             let dw = w - offset.x;
             let dh = h - offset.y;
-            if (dw * dw + dh * dh < Math.pow(5,2)) // TODO: fix overlapping link divs
+            if (dw * dw + dh * dh < Math.pow(5,2))
                 this.select();
         })
 
