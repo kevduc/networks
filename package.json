@@ -1,0 +1,14 @@
+{
+  "name": "networks",
+  "version": "1.0.0",
+  "description": "Create visual networks with common devices (routers, computers, etc.)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "network"
+  ],
+  "author": "KevDuc",
+  "license": "AGPL-3.0-only"
+}
