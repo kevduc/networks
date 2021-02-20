@@ -82,18 +82,18 @@ body {
     border-radius: 0.15cm;
     margin: 0.3cm;
 
-    background-image: url('images/icons/bin-closed.svg');
+    background-image: url('./images/icons/bin-closed.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%, auto;
 }
 
 #bin:hover.empty, #bin.open.empty {
-    background-image: url('images/icons/bin-open-empty.svg');
+    background-image: url('./images/icons/bin-open-empty.svg');
 }
 
 #bin:hover.not-empty, #bin.open.not-empty {
-    background-image: url('images/icons/bin-open-not-empty.svg');
+    background-image: url('./images/icons/bin-open-not-empty.svg');
 }
 
 #gallery-collapse-button {
