@@ -69,31 +69,37 @@ body {
 }
 
 .content-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 #bin {
-    box-sizing: inherit;
-    flex: 0 1 auto;
-    width: 2cm;
-    height: auto;
-    border-radius: 0.15cm;
-    margin: 0.3cm;
+  box-sizing: inherit;
+  flex: 0 1 auto;
+  width: 2cm;
+  height: auto;
+  border-radius: 0.15cm;
+  margin: 0.3cm;
 
-    background-image: url('./images/icons/bin-closed.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%, auto;
+  background-image: url('./images/icons/bin-closed.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%, auto;
 }
 
-#bin:hover.empty, #bin.open.empty {
-    background-image: url('./images/icons/bin-open-empty.svg');
+#bin.not-empty {
+  background-image: url('./images/icons/bin-closed-not-empty.svg');
 }
 
-#bin:hover.not-empty, #bin.open.not-empty {
-    background-image: url('./images/icons/bin-open-not-empty.svg');
+#bin:hover.empty,
+#bin.open.empty {
+  background-image: url('./images/icons/bin-open-empty.svg');
+}
+
+#bin:hover.not-empty,
+#bin.open.not-empty {
+  background-image: url('./images/icons/bin-open-not-empty.svg');
 }
 
 #gallery-collapse-button {
@@ -123,6 +129,7 @@ body {
 }
 
 .item-port {
+  visibility: hidden;
   box-sizing: inherit;
   position: absolute;
   top: 42.5%;
@@ -133,6 +140,10 @@ body {
   background-color: rgb(135, 206, 250);
   border: 2px solid rgb(123, 200, 248);
   opacity: 0.35;
+}
+
+.item:hover .item-port {
+  visibility: visible;
 }
 
 .item-port:hover {
@@ -150,19 +161,19 @@ body {
 }
 
 .ethernet-link {
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' vector-effect='non-scaling-stroke'/></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' vector-effect='non-scaling-stroke'/></svg>");
 }
 
 .wifi-link {
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' stroke-dasharray='5' vector-effect='non-scaling-stroke'/></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' stroke-dasharray='5' vector-effect='non-scaling-stroke'/></svg>");
 }
 
 .ethernet-link.selected {
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='lightskyblue' stroke-width='3' vector-effect='non-scaling-stroke'/></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='lightskyblue' stroke-width='3' vector-effect='non-scaling-stroke'/></svg>");
 }
 
 .wifi-link.selected {
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='lightskyblue' stroke-dasharray='5' vector-effect='non-scaling-stroke'/></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='lightskyblue' stroke-dasharray='5' vector-effect='non-scaling-stroke'/></svg>");
 }
 
 .disable-selection {
@@ -178,6 +189,6 @@ body {
   position: absolute;
   z-index: 999998;
   background-color: lightskyblue;
-  opacity: .2;
+  opacity: 0.2;
   border: 1px solid rgb(45, 122, 170);
 }

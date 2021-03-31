@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
     <link rel="stylesheet" href="./style.css" />
     <script type="module" src="./index.js"></script>
     <title>Networks</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="gallery">
-        <div id="gallery-content">
-            <div class="spacer"></div>
-            <div class="icon-bar">
-                <img draggable="true" class="icon" src="./images/icons/computer.svg" alt="Computer" title="Computer"
-                    id="computer" />
-                <img draggable="true" class="icon" src="./images/icons/switch.svg" alt="Switch" title="Switch"
-                    id="switch" />
-                <img draggable="true" class="icon" src="./images/icons/router.svg" alt="Router" title="Router"
-                    id="router" />
-                <img draggable="true" class="icon" src="./images/icons/wifi-router.svg" alt="WiFi Router"
-                    title="WiFi Router" id="wifi-router" />
-                <img draggable="true" class="icon" src="./images/icons/server.svg" alt="Server" title="Server"
-                    id="server" />
-                <img draggable="true" class="icon" src="./images/icons/smartphone.svg" alt="Smartphone"
-                    title="Smartphone" id="smartphone" />
-                <img draggable="true" class="icon" src="./images/icons/laptop.svg" alt="Laptop" title="Laptop"
-                    id="laptop" />
-                <img draggable="true" class="icon" src="./images/icons/cloud.svg" alt="Internet" title="Internet"
-                    id="cloud" />
-            </div>
-            <div class="spacer content-right">
-                <div id="bin" class="empty disable-selection"></div>
-            </div>
+      <div id="gallery-content">
+        <div class="spacer"></div>
+        <div class="icon-bar">
+          <img draggable="true" class="icon" src="./images/icons/computer.svg" alt="Computer" title="Computer" id="computer" />
+          <img draggable="true" class="icon" src="./images/icons/switch.svg" alt="Switch" title="Switch" id="switch" />
+          <img draggable="true" class="icon" src="./images/icons/router.svg" alt="Router" title="Router" id="router" />
+          <img
+            draggable="true"
+            class="icon"
+            src="./images/icons/wifi-router.svg"
+            alt="WiFi Router"
+            title="WiFi Router"
+            id="wifi-router"
+          />
+          <img draggable="true" class="icon" src="./images/icons/server.svg" alt="Server" title="Server" id="server" />
+          <img
+            draggable="true"
+            class="icon"
+            src="./images/icons/smartphone.svg"
+            alt="Smartphone"
+            title="Smartphone"
+            id="smartphone"
+          />
+          <img draggable="true" class="icon" src="./images/icons/laptop.svg" alt="Laptop" title="Laptop" id="laptop" />
+          <img draggable="true" class="icon" src="./images/icons/cloud.svg" alt="Internet" title="Internet" id="cloud" />
+          <img draggable="true" class="icon" src="./images/icons/internet.svg" alt="Internet" title="Internet" id="internet" />
         </div>
-        <div id="gallery-collapse-button">^</div>
+        <div class="spacer content-right">
+          <div id="bin" class="empty disable-selection"></div>
+        </div>
+      </div>
+      <div id="gallery-collapse-button">^</div>
     </div>
     <div id="canvas">
-        <div id="selection" class="selection disable-selection" draggable="false"></div>
+      <div id="selection" class="selection disable-selection" draggable="false"></div>
     </div>
-</body>
-
+  </body>
 </html>

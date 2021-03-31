@@ -1,0 +1,20 @@
+[
+  {
+    "name": "GNOME Desktop icons",
+    "url": "https://commons.wikimedia.org/wiki/GNOME_Desktop_icons",
+    "license": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "attribution": "By GNOME Project, CC BY-SA 3.0"
+  },
+  {
+    "name": "OSA Icon Library 13.05",
+    "url": "https://www.opensecurityarchitecture.org/cms/library/icon-library",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "By Open Security Architecture, CC BY-SA 4.0"
+  },
+  {
+    "name": "Tango icons",
+    "url": "https://commons.wikimedia.org/wiki/Tango_icons",
+    "license": "https://en.wikipedia.org/wiki/Public_domain",
+    "attribution": "By The people from the Tango! project - The Tango! Desktop Project, Public Domain"
+  }
+]

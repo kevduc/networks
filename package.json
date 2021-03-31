@@ -4,11 +4,23 @@
   "description": "Create visual networks with common devices (routers, computers, etc.)",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server --verbose"
   },
   "keywords": [
-    "network"
+    "network",
+    "diagram"
   ],
-  "author": "KevDuc",
-  "license": "AGPL-3.0-only"
+  "author": "kevduc",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevduc/networks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevduc/networks/issues"
+  },
+  "homepage": "https://github.com/kevduc/networks#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
 }
