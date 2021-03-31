@@ -1,6 +1,8 @@
 {
   "name": "networks",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "author": "kevduc",
+  "license": "AGPL-3.0-only",
   "description": "Create visual networks with common devices (routers, computers, etc.)",
   "main": "index.html",
   "scripts": {
@@ -10,8 +12,6 @@
     "network",
     "diagram"
   ],
-  "author": "kevduc",
-  "license": "AGPL-3.0-only",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevduc/networks.git"
