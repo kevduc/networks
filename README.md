@@ -1,7 +1,7 @@
 # networks
 
 Create visual networks with common devices (routers, computers, etc.)  
-Try it here: http://kevduc.github.io/networks
+Use it here: http://kevduc.github.io/networks
 
 - Drag-n-drop the elements onto the canvas.
 - Each element has a port (blue circle when you hover over the element) that you can drag-n-drop onto other elements to create a connection:  
