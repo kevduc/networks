@@ -11,3 +11,10 @@ Use it here: http://kevduc.github.io/networks
 ## Example
 
 <img src="https://user-images.githubusercontent.com/64347790/113187962-620da600-9251-11eb-897a-63ee6443db8e.png" title="example"/>
+
+## Attributions
+
+Icons from:
+- [GNOME Desktop icons](https://commons.wikimedia.org/wiki/GNOME_Desktop_icons), By GNOME Project, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+- [OSA Icon Library 13.05](https://www.opensecurityarchitecture.org/cms/library/icon-library), By Open Security Architecture, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- [Tango icons](https://commons.wikimedia.org/wiki/Tango_icons), By The people from the Tango! project - The Tango! Desktop Project, [Public Domain](https://en.wikipedia.org/wiki/Public_domain)
