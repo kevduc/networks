@@ -33,7 +33,7 @@ export default class Bin {
       this.bin(ev.item)
     })
 
-    this.htmlElement.addEventListener('dblclick', (ev) => {
+    this.htmlElement.addEventListener('click', (ev) => {
       if (this.content.length == 0) return
       let item = this.content.pop()
       if (this.content.length == 0) this.htmlElement.classList.replace('not-empty', 'empty')

@@ -1,20 +1,25 @@
-html {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+html,
 body {
-  box-sizing: inherit;
   margin: 0;
-  height: 100%;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: sans-serif;
 }
 
 #gallery {
-  box-sizing: inherit;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 999999;
+  z-index: 99;
   border-bottom: 2px solid rgb(231, 231, 231);
   background-color: #f3f3f3;
 
@@ -24,7 +29,6 @@ body {
 }
 
 #gallery-content {
-  box-sizing: inherit;
   flex: 0 1 auto;
   width: 100%;
   display: flex;
@@ -32,13 +36,11 @@ body {
 }
 
 .spacer {
-  box-sizing: inherit;
   flex: 1 1 0;
   padding: 0.2cm;
 }
 
 .icon-bar {
-  box-sizing: inherit;
   flex: 0 1 auto;
   display: flex;
   flex-direction: row;
@@ -53,7 +55,6 @@ body {
 }
 
 .icon {
-  box-sizing: inherit;
   flex: 0 1 auto;
   width: 2.5cm;
   height: auto;
@@ -75,12 +76,12 @@ body {
 }
 
 #bin {
-  box-sizing: inherit;
   flex: 0 1 auto;
   width: 2cm;
   height: auto;
   border-radius: 0.15cm;
   margin: 0.3cm;
+  position: relative;
 
   background-image: url('./images/icons/bin-closed.svg');
   background-repeat: no-repeat;
@@ -102,12 +103,26 @@ body {
   background-image: url('./images/icons/bin-open-not-empty.svg');
 }
 
+/* #bin:hover.not-empty::after {
+  content: 'Undo';
+  white-space: nowrap;
+  display: block;
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: lightgray;
+  border: 1px solid white;
+  padding: 0.3rem;
+} */
+
 #gallery-collapse-button {
   display: none; /* TODO */
 }
 
 #canvas {
-  box-sizing: inherit;
   z-index: 0;
   position: relative;
   width: 100%;
@@ -116,7 +131,6 @@ body {
 }
 
 .item {
-  box-sizing: inherit;
   z-index: 1;
   height: fit-content;
   border-radius: 0.15cm;
@@ -124,13 +138,11 @@ body {
 }
 
 .item-img {
-  box-sizing: inherit;
   width: 2.5cm;
 }
 
 .item-port {
   visibility: hidden;
-  box-sizing: inherit;
   position: absolute;
   top: 42.5%;
   left: 42.5%;
@@ -152,7 +164,6 @@ body {
 }
 
 .link {
-  box-sizing: inherit;
   position: absolute;
   z-index: -1;
   background-repeat: no-repeat;
